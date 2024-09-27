@@ -12,10 +12,12 @@ body {
 
 .header {
   width: 100%;
-  background: #3b5999;
+  background: gainsboro;
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 3rem;
+  font-family: serif;
+  font-size: 0.8rem;
 }
 
 .word-display {
@@ -44,6 +46,7 @@ body {
 .time,
 .score {
   font-size: 30px;
+  color: red;
 }
 
 .button {
