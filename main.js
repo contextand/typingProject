@@ -1,11 +1,11 @@
 //변수
-const GAME_TIME = 3;
+const GAME_TIME = 9;
 let score = 0;
 let time = GAME_TIME;
 let isPlaying = false;
 let timeInterval;
 let checkInterval;
-let word = [];
+let words = [];
 
 const wordInput = document.querySelector(".word-input");
 const wordDisplay = document.querySelector(".word-display");
@@ -22,15 +22,21 @@ function Init() {
 
 // 게임 실행
 function run() {
+  if (isPlaying) {
+    return;
+  }
   isPlaying = true;
   time = GAME_TIME;
+  wordInput.focus();
+  scoreDisplay.innerText = 0;
   timeInterval = setInterval(countDown, 1000);
   checkInterval = setInterval(checkStatus, 50);
+  buttonChange("게임중");
 }
 
 function checkStatus() {
   if (!isPlaying && time === 0) {
-    buttonChange("게임종료...");
+    buttonChange("게임시작");
     clearInterval(checkInterval);
   }
 }
@@ -44,12 +50,15 @@ function getWords() {
 // 단어일치 체크
 function checkMatch() {
   if (wordInput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()) {
-    score++;
     wordInput.value = "";
     if (!isPlaying) {
       return;
     }
+    score++;
     scoreDisplay.innerText = score;
+    time = GAME_TIME;
+    const randomIndex = Math.floor(Math.random() * words.length);
+    wordDisplay.innerText = words[randomIndex];
   }
 }
 
