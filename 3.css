@@ -3,6 +3,26 @@
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
+.nav {
+  width: 100%;
+  color: #000;
+  text-align: left;
+  font-size: 1rem;
+  border-bottom: 0.5px solid black;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav li {
+  padding: 0.5rem;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -10,29 +30,23 @@ body {
   align-items: center;
 }
 
-.header {
-  width: 100%;
-  background: gainsboro;
-  color: #fff;
-  text-align: center;
-  padding: 3rem;
-  font-family: serif;
-  font-size: 0.8rem;
-}
-
 .word-display {
-  margin-top: 3rem;
-  font-size: 80px;
-  color: #3b5999;
+  margin: 5rem auto;
+  width: 50rem;
+  color: lightgray;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.4;
 }
 
 .word-input-box {
   margin-top: 2rem;
+  width: 50rem;
 }
 
 .word-input {
   padding: 0.5rem;
-  width: 300px;
+  width: 100%;
 }
 
 .game-info {
